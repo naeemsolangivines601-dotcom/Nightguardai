@@ -1,0 +1,45 @@
+name: Build NightGuard APK
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Repo checkout karein
+        uses: actions/checkout@v4
+
+      - name: Repo structure dikhayein (debug)
+        run: |
+          echo "Root folder ka content:"
+          ls -la
+          echo "----"
+          echo "app folder ka content (agar hai):"
+          ls -la app || echo "app folder root mein NAHI mila — isi wajah se build fail hoga"
+
+      - name: JDK 17 setup karein
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Android SDK setup karein
+        uses: android-actions/setup-android@v3
+
+      - name: Gradle 8.4 setup karein
+        uses: gradle/actions/setup-gradle@v3
+        with:
+          gradle-version: '8.4'
+
+      - name: Debug APK build karein
+        run: gradle assembleDebug --no-daemon --stacktrace
+
+      - name: APK upload karein (artifact)
+        uses: actions/upload-artifact@v4
+        with:
+          name: NightGuard-debug-apk
+          path: app/build/outputs/apk/debug/app-debug.apk
