@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:background="#1A1A2E">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Zaroori Permission"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="12dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Is app ko brightness aur volume set/lock karne ke liye 'Modify System Settings' permission chahiye. Neeche button dabayein aur NightGuard ko allow kar dein."
+        android:textColor="#AAAAAA"
+        android:textSize="14sp"
+        android:layout_marginBottom="20dp"/>
+
+    <Button
+        android:id="@+id/btnGrantWriteSettings"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Modify System Settings Allow Karein"
+        android:layout_marginBottom="16dp"/>
+
+    <TextView
+        android:id="@+id/tvWriteSettingsStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#4CD964"
+        android:layout_marginBottom="24dp"/>
+
+    <Button
+        android:id="@+id/btnDone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Wapas Jayein"/>
+
+</LinearLayout>

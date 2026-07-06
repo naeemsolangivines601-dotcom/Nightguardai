@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1A1A2E">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="🌙 NightGuard Settings"
+        android:textColor="#FFFFFF"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="16dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="20dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Night Schedule On/Off"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"/>
+
+        <Switch
+            android:id="@+id/switchEnabled"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Start Time"
+        android:textColor="#AAAAAA"
+        android:layout_marginBottom="4dp"/>
+
+    <Button
+        android:id="@+id/btnStartTime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="7:00 PM"
+        android:layout_marginBottom="16dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="End Time"
+        android:textColor="#AAAAAA"
+        android:layout_marginBottom="4dp"/>
+
+    <Button
+        android:id="@+id/btnEndTime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="11:00 PM"
+        android:layout_marginBottom="24dp"/>
+
+    <TextView
+        android:id="@+id/tvBrightnessLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Brightness: 30%"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:layout_marginBottom="4dp"/>
+
+    <SeekBar
+        android:id="@+id/seekBrightness"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="100"
+        android:progress="30"
+        android:layout_marginBottom="20dp"/>
+
+    <TextView
+        android:id="@+id/tvVolumeLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Volume: 50%"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:layout_marginBottom="4dp"/>
+
+    <SeekBar
+        android:id="@+id/seekVolume"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="100"
+        android:progress="50"
+        android:layout_marginBottom="24dp"/>
+
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Save aur Apply Karein"
+        android:layout_marginBottom="12dp"/>
+
+    <Button
+        android:id="@+id/btnPermissions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Zaroori Permissions Check Karein"
+        android:layout_marginBottom="12dp"/>
+
+    <TextView
+        android:id="@+id/tvStatus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textColor="#4CD964"
+        android:gravity="center"
+        android:paddingTop="8dp"/>
+
+</LinearLayout>
+</ScrollView>
