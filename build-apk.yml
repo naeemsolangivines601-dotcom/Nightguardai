@@ -1,0 +1,34 @@
+name: Build NightGuard APK
+
+# Yeh workflow har baar chalega jab aap 'main' branch par push karenge,
+# ya phir aap ise GitHub ke "Actions" tab se manually bhi chala sakte hain.
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Repo checkout karein
+        uses: actions/checkout@v4
+
+      - name: JDK 17 setup karein
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Gradle setup karein
+        uses: gradle/actions/setup-gradle@v3
+
+      - name: Debug APK build karein
+        run: gradle assembleDebug --no-daemon
+
+      - name: APK upload karein (artifact)
+        uses: actions/upload-artifact@v4
+        with:
+          name: NightGuard-debug-apk
+          path: app/build/outputs/apk/debug/app-debug.apk
